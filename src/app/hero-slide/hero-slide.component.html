@@ -1,0 +1,45 @@
+<!-- modifier la valeur de h- pour changer la hauteur du conteneur -->
+<div class="relative m-auto h-[40vh] overflow-hidden">
+  <div class="absolute inset-0 z-10 bg-black opacity-50"></div>
+
+  <!-- Carousel Container -->
+  <div
+    class="flex transition-transform duration-700 ease-in-out transform"
+    [ngStyle]="{ transform: 'translateX(-' + currentSlide * 100 + '%)' }"
+  >
+    <!-- Slide Items -->
+    <div
+      *ngFor="let image of images"
+      class="w-full flex-shrink-0 h-[80vh] bg-cover bg-center"
+      [ngStyle]="{ 'background-image': 'url(' + image.src + ')' }"
+    ></div>
+  </div>
+
+  <!-- Hero Content -->
+  <div
+    class="absolute inset-0 z-20 flex flex-col items-center justify-center text-center text-white px-4"
+  >
+    <h1 class="text-4xl md:text-6xl font-bold mb-4">
+      Le luxe des ruines, directement chez vous, ou ce qu'il en reste.
+    </h1>
+    <button
+      class="bg-[#f7941d] hover:bg-[#cc7517] text-white font-bold py-2 px-6 rounded-full mt-4 transition duration-300"
+    >
+      Débusquez vos trésors
+    </button>
+  </div>
+
+  <!-- Carousel Controls -->
+  <button
+    (click)="prevSlide()"
+    class="absolute top-1/2 left-0 transform -translate-y-1/2 p-3 bg-gray-800 text-white rounded-full hover:bg-gray-700 z-30"
+  >
+    &lt;
+  </button>
+  <button
+    (click)="nextSlide()"
+    class="absolute top-1/2 right-0 transform -translate-y-1/2 p-3 bg-gray-800 text-white rounded-full hover:bg-gray-700 z-30"
+  >
+    &gt;
+  </button>
+</div>

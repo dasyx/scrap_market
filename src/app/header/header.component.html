@@ -1,13 +1,22 @@
 <mat-toolbar color="primary">
   <img
-    src="/logos/scrap_market-minilogo.webp"
+    src="/logos/scrap_market-logo-init.webp"
     alt="Angular Logo"
-    style="height: 40px; margin-right: 16px"
+    style="height: 40px; margin-right: 16px; border-radius: 2px"
   />
 
-  <span style="flex: 1 1 auto"></span>
+  <span
+    style="
+      flex: 1 1 auto;
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+    "
+  >
+    ScrapMarket
+  </span>
 
-  <nav>
+  <nav style="margin-left: auto">
     <button mat-button routerLink="/">Home</button>
     <button mat-button routerLink="/about">About</button>
     <button mat-button routerLink="/contact">Contact</button>
