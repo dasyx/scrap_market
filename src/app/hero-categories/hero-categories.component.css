@@ -1,9 +1,9 @@
 .categories-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Centrage des éléments */
+  gap: 20px; /* Espacement entre les cartes */
   padding: 20px;
-  justify-content: center;
   margin: 0 auto;
 }
 
@@ -14,10 +14,12 @@
   text-align: center;
   padding: 15px;
   transition: transform 0.3s, box-shadow 0.3s;
-  height: 100%; /* Assure que la carte occupe toute la hauteur */
-  display: grid; /* Utiliser grid pour organiser le contenu */
-  grid-template-rows: auto 1fr auto; /* Définit la structure des lignes */
-  align-items: center; /* Centre les éléments verticalement */ /* Centre les éléments horizontalement */
+  width: calc(33.333% - 20px); /* 3 cartes par ligne, ajuster le gap */
+  max-width: 320px; /* Limite la largeur de chaque carte */
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .category-card:hover {
@@ -51,4 +53,17 @@
 
 .explore-btn:hover {
   background-color: #d9831a;
+}
+
+/* Styles pour les écrans mobiles */
+@media (max-width: 768px) {
+  .categories-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .category-card {
+    width: 90%; /* Ajuste la largeur des cartes en affichage mobile */
+    margin-bottom: 20px;
+  }
 }

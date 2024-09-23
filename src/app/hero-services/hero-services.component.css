@@ -1,0 +1,41 @@
+.bg-dark {
+  background-color: #1a1a1a;
+}
+
+.services-container {
+  padding: 2rem;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.service-card {
+  display: flex;
+  align-items: center;
+  margin: 4rem 0;
+  padding: 1rem;
+  background: #2b2b2b;
+  border-radius: 0.25rem;
+  transition: transform 0.3s;
+}
+
+.service-card:hover {
+  transform: scale(1.05);
+}
+
+.service-icon {
+  font-size: 2rem;
+  color: #ffcc00;
+  margin-right: 1rem;
+}
+
+.service-content {
+  flex: 1;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

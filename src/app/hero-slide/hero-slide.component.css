@@ -9,3 +9,10 @@
 .absolute {
   position: absolute;
 }
+
+#title-dot {
+  color: #f7941d;
+  width: 20px;
+  height: 20px;
+  font-size: 3em;
+}

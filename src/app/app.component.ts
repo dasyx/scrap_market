@@ -3,6 +3,7 @@ import { RouterOutlet } from "@angular/router";
 import { HeaderComponent } from "./header/header.component";
 import { HeroSlideComponent } from "./hero-slide/hero-slide.component";
 import { HeroCategoriesComponent } from "./hero-categories/hero-categories.component";
+import { HeroServicesComponent } from "./hero-services/hero-services.component";
 
 @Component({
   selector: "app-root",
@@ -12,6 +13,7 @@ import { HeroCategoriesComponent } from "./hero-categories/hero-categories.compo
     HeaderComponent,
     HeroSlideComponent,
     HeroCategoriesComponent,
+    HeroServicesComponent,
   ],
   templateUrl: "./app.component.html",
   styleUrl: "./app.component.css",
