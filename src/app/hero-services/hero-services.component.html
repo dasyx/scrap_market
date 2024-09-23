@@ -1,24 +1,25 @@
-<div class="services-container bg-dark text-white p-8 flex relative">
+<div
+  class="services-container bg-dark text-white p-8 flex flex-col lg:flex-row relative"
+>
   <!-- Conteneur de gauche pour l'image avec un flou -->
-  <div class="w-1/2 flex justify-center items-center relative">
-    <img
-      src="/images/desert_services.webp"
-      alt="Post-Apocalyptic Illustration"
-      class="max-w-full h-auto filter blur-sm object-cover"
-    />
-
+  <div
+    class="w-full lg:w-1/2 flex flex-col justify-center items-center relative mb-8 lg:mb-0 bg-cover bg-center rounded-lg"
+    [ngStyle]="{
+      'background-image': 'url(/images/desert_services.webp)',
+      'background-size': 'cover',
+      'background-position': 'center'
+    }"
+  >
     <!-- Conteneur de texte incrusté avec ombrage marqué -->
     <div
-      class="absolute text-container text-white p-4 md:p-6 lg:p-8 bg-black bg-opacity-60 shadow-2xl rounded-lg w-[90%] h-[90%] md:w-[80%] md:h-[80%] lg:w-[90%] lg:h-[90%] 2xl:p-16 2xl:leading-relaxed flex flex-col justify-center"
+      class="text-container text-white p-4 md:p-6 lg:p-8 bg-black bg-opacity-60 shadow-2xl rounded-lg w-[90%] h-auto md:w-[80%] lg:h-auto 2xl:p-16 2xl:leading-relaxed flex flex-col justify-center"
     >
       <h3
         class="text-2xl md:text-3xl lg:text-4xl font-bold mb-2 md:mb-4 2xl:mb-8"
       >
         En ces temps troublés...
       </h3>
-      <p
-        class="leading-relaxed text-sm md:text-base lg:text-lg 2xl:mb-8 2xl:leading-loose"
-      >
+      <p class="leading-relaxed text-sm md:text-base lg:text-lg 2xl:mb-8">
         "Quand le monde s'effondre, et que les villes ne sont plus que des
         ruines... nous sommes là. Chez ScrapMarket, nous nous efforçons de
         fournir des services indispensables à tous les survivants, car même au
@@ -30,7 +31,7 @@
         poussière."
       </p>
       <p
-        class="leading-relaxed mt-2 md:mt-4 text-sm md:text-base lg:text-lg 2xl:mt-8 2xl:leading-loose"
+        class="leading-relaxed mt-2 md:mt-4 text-sm md:text-base lg:text-lg 2xl:mt-8"
       >
         Que vous soyez un survivant chevronné, un aventurier solitaire, ou
         simplement quelqu'un qui refuse de se laisser abattre par ce monde en
@@ -43,15 +44,12 @@
   </div>
 
   <!-- Conteneur de droite pour la liste des services -->
-  <div class="w-1/2 pl-8 2xl:pl-16">
+  <div class="w-full lg:w-1/2 pl-0 lg:pl-8">
     <h2 class="text-center text-3xl mb-6 font-bold 2xl:mb-12">
       Nos services post-apocalyptiques
     </h2>
 
-    <div
-      class="service-card mb-6 2xl:mb-12 mt-8"
-      *ngFor="let service of services"
-    >
+    <div class="service-card mb-6 2xl:mb-12" *ngFor="let service of services">
       <div class="icon-container mb-2 2xl:mb-4">
         <mat-icon class="service-icon">{{ service.icon }}</mat-icon>
       </div>
@@ -65,7 +63,9 @@
     <div
       class="additional-service-card mt-8 p-4 bg-opacity-70 rounded-lg transition-all duration-300 hover:bg-opacity-90 shadow-xl 2xl:mt-16"
     >
-      <p class="text-sm md:text-base lg:text-lg 2xl:text-xl 2xl:leading-loose">
+      <p
+        class="text-sm md:text-base lg:text-lg 2xl:text-xl 2xl:leading-relaxed"
+      >
         Chez ScrapMarket, nous croyons que même à l’aube d’un nouvel âge sombre,
         il est encore possible de trouver un semblant d’ordre et de qualité.
         Alors, ne laissez pas les cendres de ce qui était autrefois vous

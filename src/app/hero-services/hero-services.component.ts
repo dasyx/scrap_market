@@ -1,15 +1,29 @@
-import { NgFor } from "@angular/common";
-import { Component } from "@angular/core";
+import { NgClass, NgFor, NgStyle } from "@angular/common";
+import { Component, HostListener, OnInit } from "@angular/core";
 import { MatIcon } from "@angular/material/icon";
 
 @Component({
   selector: "app-hero-services",
   standalone: true,
-  imports: [MatIcon, NgFor],
+  imports: [MatIcon, NgFor, NgClass, NgStyle],
   templateUrl: "./hero-services.component.html",
   styleUrl: "./hero-services.component.css",
 })
-export class HeroServicesComponent {
+export class HeroServicesComponent implements OnInit {
+  isMobileView: boolean = false;
+
+  ngOnInit() {
+    this.checkViewport();
+  }
+
+  @HostListener("window:resize", ["$event"])
+  onResize(event: any) {
+    this.checkViewport();
+  }
+
+  checkViewport() {
+    this.isMobileView = window.innerWidth < 720;
+  }
   services = [
     {
       icon: "construction",
