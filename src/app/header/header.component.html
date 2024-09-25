@@ -1,24 +1,69 @@
-<mat-toolbar color="primary">
+<mat-toolbar color="primary" class="relative z-50">
   <img
     src="/logos/scrap_market-logo-init.webp"
     alt="Angular Logo"
-    style="height: 40px; margin-right: 16px; border-radius: 2px"
+    class="h-10 mr-4 rounded-sm"
   />
 
-  <span
-    style="
-      flex: 1 1 auto;
-      text-align: center;
-      font-size: 1.5rem;
-      font-weight: bold;
-    "
-  >
-    ScrapMarket
-  </span>
+  <span class="flex-1 text-center text-xl font-bold">ScrapMarket</span>
 
-  <nav style="margin-left: auto">
-    <button mat-button routerLink="/">Home</button>
+  <button class="block lg:hidden p-2 focus:outline-none" (click)="toggleMenu()">
+    <!-- Icône du menu burger -->
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="h-6 w-6 text-white"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M4 6h16M4 12h16m-7 6h7"
+      />
+    </svg>
+  </button>
+
+  <nav class="hidden lg:flex space-x-4 ml-auto">
     <button mat-button routerLink="/about">About</button>
     <button mat-button routerLink="/contact">Contact</button>
   </nav>
+
+  <!-- Menu accordéon pour les petites résolutions -->
+  <div
+    *ngIf="isMenuOpen"
+    class="lg:hidden absolute top-full left-0 w-full"
+    style="
+      background-color: #101414;
+      color: white;
+      box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+      border: 1px solid #1c1c1c;
+      z-index: 50;
+    "
+  >
+    <nav class="flex flex-col p-4 space-y-2 text-center">
+      <button
+        class="p-2 hover:bg-gray-700 transition duration-300 ease-in-out rounded"
+        routerLink="/"
+        (click)="toggleMenu()"
+      >
+        Home
+      </button>
+      <button
+        class="p-2 hover:bg-gray-700 transition duration-300 ease-in-out rounded"
+        routerLink="/about"
+        (click)="toggleMenu()"
+      >
+        About
+      </button>
+      <button
+        class="p-2 hover:bg-gray-700 transition duration-300 ease-in-out rounded"
+        routerLink="/contact"
+        (click)="toggleMenu()"
+      >
+        Contact
+      </button>
+    </nav>
+  </div>
 </mat-toolbar>

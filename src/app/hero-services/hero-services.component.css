@@ -6,7 +6,15 @@
   padding: 2rem;
   animation: fadeIn 2s ease-in-out;
 }
+.services-container h2 {
+  color: #fff;
+  margin-bottom: 2rem;
+  font-family: "Russo One", sans-serif;
+}
 
+.services-container h3 {
+  font-family: "Oxanium", sans-serif;
+}
 .service-card {
   display: flex;
   align-items: center;

@@ -4,7 +4,29 @@
   justify-content: center; /* Centrage des éléments */
   gap: 20px; /* Espacement entre les cartes */
   padding: 20px;
-  margin: 0 auto;
+  margin: 2rem auto;
+}
+
+.categories-header {
+  width: 100%;
+  text-align: center; /* Centre le titre et la ligne hr */
+  margin-bottom: 20px; /* Espacement entre le header et les cartes */
+}
+
+.categories-title {
+  font-size: 2em;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+  font-family: "Russo One", sans-serif;
+}
+
+.categories-title_subline {
+  width: 80px; /* Ajustez la largeur selon vos préférences */
+  height: 4px; /* Épaisseur de la ligne */
+  background-color: rgb(247, 148, 29);
+  margin: 5px auto; /* Centrer la ligne et ajouter un espace entre le h2 et la ligne */
+  border: none;
 }
 
 .category-card {
@@ -20,6 +42,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 5rem;
 }
 
 .category-card:hover {
@@ -60,6 +83,17 @@
   .categories-container {
     flex-direction: column;
     align-items: center;
+  }
+
+  .categories-title {
+    font-size: 1.8em;
+    justify-content: center;
+  }
+
+  .categories-title_subline {
+    position: relative;
+    margin-bottom: 3rem;
+    height: 0.5rem;
   }
 
   .category-card {
